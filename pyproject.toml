@@ -7,3 +7,60 @@ requires-python = ">=3.13"
 dependencies = [
     "django>=5.2.8",
 ]
+
+[dependency-groups]
+dev = [
+    "django-stubs[compatible-mypy]>=5.1.2",
+    "mypy>=1.18.2",
+    "ruff>=0.14.5",
+]
+
+[tool.ruff]
+preview = true
+line-length = 88
+exclude = [
+    ".git",
+    ".venv",
+    "**/migrations/",
+    "**project/settings.py",
+    "**project/test_settings.py",
+]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "I",
+    "F",
+    "E",
+    "W",
+    "Q",
+    "UP",
+    "FAST",
+    "LOG",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint.isort]
+known-first-party = [
+    "tests",
+]
+
+[tool.django-stubs]
+django_settings_module = "project.settings"
+
+[tool.mypy]
+exclude = [
+    ".venv/",
+    "migrations/",
+]
+ignore_missing_imports = true
+mypy_path = "src/"
+plugins = ["mypy_django_plugin.main"]
+
+[mypy.plugins.django-stubs]
+django_settings_module = "project.settings"
