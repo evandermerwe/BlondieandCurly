@@ -18,7 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from inventory import views as inventory_views
 
+# urlpatterns = [
+#     path('', inventory_views.InventoryView.as_view(), name="root"),
+#     path('admin/', admin.site.urls),
+# ]
+
 urlpatterns = [
-    path('', inventory_views.InventoryView.as_view(), name="root"),
-    path('admin/', admin.site.urls),
+    path('')
 ]
