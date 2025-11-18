@@ -1,12 +1,19 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
 
-{% block content %}
-{% endblock %}
+    <h1>Current Inventory</h1>
+
+    <div class="container">
+    {% block content %}
+    {% endblock %}
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,25 @@
+* {
+    font-family: HelveticaNeue-Ultralight;
+}
+
+h1 {
+    margin: auto;
+}
+
+.container {
+    margin: auto;
+    width: 80vw;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.inventory_item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 25vw;
+    h2, p {
+        display: flex;  
+    }
+}
