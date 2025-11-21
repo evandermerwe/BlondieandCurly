@@ -4,21 +4,24 @@
 
 h1 {
     margin: auto;
+    text-align: center;
 }
 
 .container {
     margin: auto;
-    width: 80vw;
+    width: 90vw;
     border: 1px solid black;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .inventory_item {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
-    width: 25vw;
+    border: 0px solid black;
+    width: calc(30vw - 2px);
     h2, p {
         display: flex;  
     }
