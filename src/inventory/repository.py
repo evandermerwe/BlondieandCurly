@@ -16,8 +16,8 @@ class InventoryRepository:
     def get_inventory(self, serial_number: str) -> models.EngineInventoryModel:
         return models.EngineInventoryModel.objects.get(serial_number=serial_number)
 
-    def create_inventory(self, inventory: models.EngineInventoryModel):
+    def create_inventory(self, inventory: models.EngineInventoryModel) -> None:
         inventory.save()
 
-    def create_engine_variant(self, engine_variant: models.EngineVariantModel):
+    def create_engine_variant(self, engine_variant: models.EngineVariantModel) -> None:
         engine_variant.save()
