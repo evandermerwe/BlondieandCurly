@@ -27,8 +27,8 @@ class InventoryModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     engine_variant = models.ForeignKey(EngineVariantModel, on_delete=models.PROTECT, default=None)
-    project_name = models.CharField(max_length=255, default="RAE???")
     serial_number = models.CharField(max_length=255, default="NOT GIVEN")
+    project_name = models.CharField(max_length=255, default="RAE???")
     estimated_availability = models.DateField(default=None, null=True)
  
     def __str__(self):
