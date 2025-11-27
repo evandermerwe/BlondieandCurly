@@ -5,3 +5,19 @@ class InventoryRepository:
     def get_all_inventory(self) -> list[models.InventoryModel]:
         all_models = models.InventoryModel.objects.all()
         return list(all_models)
+
+    def get_all_engine_variants(self) -> list[models.EngineVariantModel]:
+        all_models = models.EngineVariantModel.objects.all()
+        return list(all_models)
+
+    def get_engine_variant(self, variant_name: str) -> models.EngineVariantModel:
+        return models.EngineVariantModel.objects.get(variant_name=variant_name)
+
+    def get_inventory(self, serial_number: str) -> models.InventoryModel:
+        return models.InventoryModel.objects.get(serial_number=serial_number)
+
+    def create_inventory(self, inventory: models.InventoryModel):
+        inventory.save()
+
+    def create_engine_variant(self, engine_variant: models.EngineVariantModel):
+        engine_variant.save()
