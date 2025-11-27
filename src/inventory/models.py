@@ -16,11 +16,11 @@ class EngineVariantModel(models.Model):
     top_overhaul_cost = models.DecimalField(max_digits=10, decimal_places=2,default=0.00) 
     accessories_cost = models.DecimalField(max_digits=10, decimal_places=2,default=0.00) 
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.variant_name}"
 
 
-class InventoryModel(models.Model):
+class EngineInventoryModel(models.Model):
     id = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=False, unique=True
     )
@@ -31,10 +31,10 @@ class InventoryModel(models.Model):
     project_name = models.CharField(max_length=255, default="RAE???")
     estimated_availability = models.DateField(default=None, null=True)
  
-    def __str__(self):
-        return f"{self.project_name}"
+    def __str__(self) -> str:
+        return f"{self.serial_number}"
 
-    @property
-    def overhaul_cost(self):
-        """All engines of a variant always have the same price"""
-        return self.variant.overhaul_cost
+    # @property
+    # def overhaul_cost(self):
+    #     """All engines of a variant always have the same price"""
+    #     return self.variant.overhaul_cost
